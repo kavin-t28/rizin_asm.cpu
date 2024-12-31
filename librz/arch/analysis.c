@@ -848,3 +848,22 @@ RZ_API void rz_analysis_remove_import(RzAnalysis *analysis, const char *imp) {
 RZ_API void rz_analysis_purge_imports(RzAnalysis *analysis) {
 	rz_list_purge(analysis->imports);
 }
+
+static const char *cpu_descriptions[] = {
+    "r3000", "MIPS R3000",
+    "r4000", "MIPS R4000",
+    "r5900", "MIPS R5900",
+    "r6000", "MIPS R6000",
+    "r8000", "MIPS R8000",
+    "r10000", "MIPS R10000",
+    "mips32", "MIPS32",
+    "mips64", "MIPS64",
+    "mips64r2", "MIPS64 Release 2",
+    "loongson2e", "Loongson 2E",
+    "loongson2f", "Loongson 2F",
+    "armv7", "ARMv7",
+    "armv8", "ARMv8",
+    "x86", "Intel x86",
+    "x86_64", "Intel x86_64",
+    NULL
+};

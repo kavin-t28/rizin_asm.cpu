@@ -248,6 +248,12 @@ static bool arm_fini(void *user) {
 	return true;
 }
 
+static const char *arm_cpus[] = {
+    "armv7", "ARMv7",
+    "armv8", "ARMv8",
+    NULL
+};
+
 static char *mnemonics(RzAsm *a, int id, bool json) {
 	AsmArmCSContext *ctx = (AsmArmCSContext *)a->plugin_data;
 	int i;

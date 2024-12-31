@@ -5,7 +5,7 @@
 #include <deprecated_arch_helper.h>
 #include <capstone/capstone.h>
 
-#define EXTRA_CPUS "r2300,r2600,r2800,r2000a,r2000,r3000a,r3000,r10000"
+#define EXTRA_CPUS "r2300,r2600,r2800,r2000a,r2000,r3000,r10000"
 
 #if CS_NEXT_VERSION < 6
 // first cpu is default
@@ -27,6 +27,21 @@
 			return true; \
 		} \
 	} while (0)
+
+static const char *mips_cpus[] = {
+    "r3000", "MIPS R3000",
+    "r4000", "MIPS R4000",
+    "r5900", "MIPS R5900",
+    "r6000", "MIPS R6000",
+    "r8000", "MIPS R8000",
+    "r10000", "MIPS R10000",
+    "mips32", "MIPS32",
+    "mips64", "MIPS64",
+    "mips64r2", "MIPS64 Release 2",
+    "loongson2e", "Loongson 2E",
+    "loongson2f", "Loongson 2F",
+    NULL
+};
 
 static bool cs_mode_from_cpu(const char *cpu, int bits, bool big_endian, cs_mode *mode) {
 	cs_mode _mode = (big_endian) ? CS_MODE_BIG_ENDIAN : CS_MODE_LITTLE_ENDIAN;
